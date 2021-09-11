@@ -34,7 +34,7 @@ Workshop: https://steamcommunity.com/sharedfiles/filedetails/?id=2599563790
 
 ## Credits
 
-Thanks to **Michy**, **Reino**, **Haru**, **Alejandro**, **Eagle** and **DaniPrrrum** for helping to test this addon.
+Thanks to **Stig**, **Michy**, **Reino**, **Haru**, **Alejandro**, **Eagle** and **DaniPrrrum** for helping to test this addon.
 
 Original idea by Tommy228: https://github.com/Tommy228/
 
