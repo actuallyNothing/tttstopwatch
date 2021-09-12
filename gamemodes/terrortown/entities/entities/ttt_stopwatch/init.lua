@@ -29,6 +29,9 @@ CreateConVar("stopwatch_cancel_cooldown", 3, FCVAR_ARCHIVE, "Time that has to pa
 
 CreateConVar("stopwatch_allow_cancelling_midair", 1, FCVAR_ARCHIVE, "Determines whether players can cancel the Stopwatch teleport while in mid-air.", 0, 1)
 
+-- 12/9/21
+CreateConVar("stopwatch_nofall", 1, FCVAR_ARCHIVE, "Determines whether the Stopwatch negates fall damage when activated.", 0, 1)
+
 -- Net strings
 util.AddNetworkString( "Stopwatch_Enable" )
 util.AddNetworkString( "Stopwatch_Disable" )
@@ -81,6 +84,10 @@ local function stopwatch_get_cancel_cooldown()
     return (GetConVar("stopwatch_cancel_cooldown"):GetInt())
 end
 
+local function stopwatch_is_nofall_on()
+    return (GetConVar("stopwatch_nofall"):GetBool())
+end
+
 -- Main functions
 
 local function stopwatch_check_tppos(ply)
@@ -131,10 +138,12 @@ local function stopwatch_finish(ply)
 
         sound.Play(TTTStopwatch.Sounds[math.Round(math.Rand(1, #TTTStopwatch.Sounds))], pos, 75, math.Round(math.Rand(65,125)))
 
-        -- One more second of fall damage invulnerability
-        timer.Simple(1, function() ply.Stopwatch_NoFall = false end)
+        if (stopwatch_is_nofall_on()) then
+            -- One more second of fall damage invulnerability
+            timer.Simple(1, function() ply.Stopwatch_NoFall = false end)
 
-        ply:SetPos(ply.Stopwatch_Pos)
+            ply:SetPos(ply.Stopwatch_Pos)
+        end
 
     else
 
@@ -161,7 +170,7 @@ local function stopwatch_enable(ply)
 
     ply.Stopwatch_Enabled = true
     ply.Stopwatch_CancelTime = CurTime() + stopwatch_get_cancel_cooldown()
-    ply.Stopwatch_NoFall = true
+    if (stopwatch_is_nofall_on()) then ply.Stopwatch_NoFall = true end
 
     ply.Stopwatch_EnabledOnRound = current_round()
 
@@ -181,7 +190,7 @@ end
 -- Hooks -w-
 
 hook.Add("EntityTakeDamage", "Stopwatch_Damage", function(ent, dmg)
-    if (ent:IsValid() and ent:IsPlayer() and ent:HasEquipmentItem(EQUIP_STOPWATCH) and ent.Stopwatch_NoFall and dmg:IsFallDamage()) then
+    if (stopwatch_is_nofall_on() and ent:IsValid() and ent:IsPlayer() and ent:HasEquipmentItem(EQUIP_STOPWATCH) and ent.Stopwatch_NoFall and dmg:IsFallDamage()) then
         return true
     end
 end)

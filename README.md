@@ -24,6 +24,8 @@ You can't start the ability while crouching or mid-air, and the ability's status
 
 - **stopwatch_allow_cancelling_midair** (default: 1): Determines whether players can teleport early while in mid-air.
 
+- **stopwatch_nofall** (default: 1): Determines whether the Stopwatch negates fall damage when activated.
+
 ### Client ConVars
 - **stopwatch_show_time** (default: 0): Determines whether to show the exact time in seconds before teleporting the player.
 
