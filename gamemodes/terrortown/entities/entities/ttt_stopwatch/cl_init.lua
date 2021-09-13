@@ -123,8 +123,6 @@ hook.Add("TTTBoughtItem", "Stopwatch_Panel", function(is_item, equipment)
     function TTTStopwatch.Panel.Frame:Think()
         if (not LocalPlayer():HasEquipmentItem(EQUIP_STOPWATCH)) then
             self:Remove()
-        -- else
-        --     update_stopwatch_panel()
         end
     end
 
