@@ -142,9 +142,10 @@ local function stopwatch_finish(ply)
             -- One more second of fall damage invulnerability
             timer.Simple(1, function() ply.Stopwatch_NoFall = false end)
 
-            ply:SetPos(ply.Stopwatch_Pos)
         end
 
+        ply:SetPos(ply.Stopwatch_Pos)
+        
     else
 
         sound.Play(TTTStopwatch.Sounds[math.Round(math.Rand(1, #TTTStopwatch.Sounds))], pos, 75, math.Round(math.Rand(65,125)))
