@@ -138,14 +138,12 @@ local function stopwatch_finish(ply)
 
         sound.Play(TTTStopwatch.Sounds[math.Round(math.Rand(1, #TTTStopwatch.Sounds))], pos, 75, math.Round(math.Rand(65,125)))
 
-        if (stopwatch_is_nofall_on()) then
-            -- One more second of fall damage invulnerability
-            timer.Simple(1, function() ply.Stopwatch_NoFall = false end)
-
-        end
+        -- One more second of fall damage invulnerability
+        if (not stopwatch_is_nofall_on()) then ply.Stopwatch_NoFall = true end
+        timer.Simple(1, function() ply.Stopwatch_NoFall = false end)
 
         ply:SetPos(ply.Stopwatch_Pos)
-        
+
     else
 
         sound.Play(TTTStopwatch.Sounds[math.Round(math.Rand(1, #TTTStopwatch.Sounds))], pos, 75, math.Round(math.Rand(65,125)))
@@ -191,7 +189,7 @@ end
 -- Hooks -w-
 
 hook.Add("EntityTakeDamage", "Stopwatch_Damage", function(ent, dmg)
-    if (stopwatch_is_nofall_on() and ent:IsValid() and ent:IsPlayer() and ent:HasEquipmentItem(EQUIP_STOPWATCH) and ent.Stopwatch_NoFall and dmg:IsFallDamage()) then
+    if (ent:IsValid() and ent:IsPlayer() and ent:HasEquipmentItem(EQUIP_STOPWATCH) and ent.Stopwatch_NoFall and dmg:IsFallDamage()) then
         return true
     end
 end)
