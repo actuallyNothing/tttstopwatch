@@ -1,7 +1,7 @@
 # ![Stopwatch Icon](https://i.imgur.com/DKpabMV.png) Stopwatch
 A piece of equipment that allows you to mark your position and teleport back to it 10 seconds later.
 
-This is my take on Tommy228's old X-Mark equipment, which is now deleted. I've heard numerous requests for this weapon before, so this is my own take on it.
+This is my take on Tommy228's old X-Mark equipment, which is now deleted.
 
 ## Usage
 
