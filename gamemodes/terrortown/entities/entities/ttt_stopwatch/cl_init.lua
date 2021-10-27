@@ -51,6 +51,10 @@ local function stopwatch_show_seconds()
     return (GetConVar("stopwatch_show_time"):GetBool())
 end
 
+local function stopwatch_is_bought()
+    return (LocalPlayer():HasEquipmentItem(EQUIP_STOPWATCH))
+end
+
 local function finish_stopwatch()
     if (timer.Exists("TTTStopwatch")) then
         timer.Remove("TTTStopwatch")
@@ -106,6 +110,9 @@ hook.Add("TTTEndRound", "Stopwatch_RoundFinish", del_stopwatch)
 
 hook.Add("TTTBoughtItem", "Stopwatch_Panel", function(is_item, equipment)
 
+    if (not is_item or equipment ~= EQUIP_STOPWATCH) then return end
+    if (not stopwatch_is_bought()) then return end
+
     TTTStopwatch.Panel = {}
 
     local size = 145
@@ -121,7 +128,7 @@ hook.Add("TTTBoughtItem", "Stopwatch_Panel", function(is_item, equipment)
     end
 
     function TTTStopwatch.Panel.Frame:Think()
-        if (not LocalPlayer():HasEquipmentItem(EQUIP_STOPWATCH)) then
+        if (not stopwatch_is_bought()) then
             self:Remove()
         end
     end
