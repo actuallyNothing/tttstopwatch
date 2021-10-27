@@ -1,8 +1,14 @@
 include( "shared.lua" )
 
--- ConVar
+-- ConVars
 
 CreateClientConVar("stopwatch_show_time", 0, true, false, "Determines whether to show the remaining time in seconds for the Stopwatch.", 0, 1)
+
+CreateConVar("stopwatch_cooldown", 30, {FCVAR_ARCHIVE, FCVAR_REPLICATED}, "Cooldown in seconds between Stopwatch uses.", 1)
+
+CreateConVar("stopwatch_cancel_cooldown", 3, {FCVAR_ARCHIVE, FCVAR_REPLICATED}, "Time that has to pass after activating Stopwatch for the player to be able to 'cancel' the teleport.", 0)
+
+CreateConVar("stopwatch_allow_cancelling_midair", 1, {FCVAR_ARCHIVE, FCVAR_REPLICATED}, "Determines whether players can cancel the Stopwatch teleport while in mid-air.", 0, 1)
 
 -- Variables and tables
 
