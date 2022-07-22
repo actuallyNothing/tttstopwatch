@@ -118,8 +118,6 @@ local function stopwatch_check_tppos(ply)
 end
 
 local function stopwatch_finish(ply)
-    local timer_name = "Stopwatch_" .. ply:SteamID()
-
     if (ply.Stopwatch_EnabledOnRound ~= current_round()) then ply:RemoveStopwatch() return end
 
     ply:CheckForStopwatchTimer()
@@ -155,10 +153,8 @@ local function stopwatch_finish(ply)
             ply:SetPos(ply.Stopwatch_Pos)
             ply:TakeDamage(ply:Health() * 2, data.blocker, data.blocker)
         end
-        
-    end
 
-    
+    end
 end
 
 local function stopwatch_enable(ply)
@@ -214,7 +210,9 @@ end)
 
 hook.Add("TTTEndRound", "Stopwatch_FinishAll", function()
     for k,v in pairs(player.GetAll()) do
-        v:RemoveStopwatch()
+        if (v:HasEquipmentItem(EQUIP_STOPWATCH)) then
+            v:RemoveStopwatch()
+        end
     end
 end)
 

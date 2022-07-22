@@ -66,9 +66,10 @@ local function finish_stopwatch()
         timer.Remove("TTTStopwatch")
     end
 
-    LocalPlayer():StopSound("stopwatch/running.wav")
-
     TTTStopwatch.Enabled = false
+
+    if (not IsValid(LocalPlayer())) then return end
+    LocalPlayer():StopSound("stopwatch/running.wav")
 end
 
 local function del_stopwatch()
@@ -99,8 +100,6 @@ end)
 net.Receive("Stopwatch_Disable", function()
 
     finish_stopwatch()
-    
-    LocalPlayer():EmitSound("stopwatch/stop.wav")
 
     TTTStopwatch.NextUse = CurTime() + stopwatch_get_cooldown()
 
@@ -162,7 +161,7 @@ hook.Add("TTTBoughtItem", "Stopwatch_Panel", function(is_item, equipment)
             self:SetColor(TTTStopwatch.Colors.Red)
 
         else
-    
+
             self:SetText("Stopwatch ready")
             self:SetColor(TTTStopwatch.Colors.Green)
 
@@ -189,23 +188,23 @@ hook.Add("TTTBoughtItem", "Stopwatch_Panel", function(is_item, equipment)
         if not self then return end
 
         if (TTTStopwatch.Enabled) then
-    
+
             if (stopwatch_can_cancel()) then
-    
+
                 if (not stopwatch_can_cancel_midair() or LocalPlayer():Crouching()) then
                     -- Not on ground / is crouching
-    
+
                     self:SetText("Must be standing")
                     self:SetColor(TTTStopwatch.Colors.Red)
                 else
-    
+
                     -- On ground, tp available
                     self:SetText("USE + RELOAD to teleport")
                     self:SetColor(TTTStopwatch.Colors.Green)
                 end
-                
+
             else
-    
+
                 self:SetText(string.format("Wait %s seconds", math.ceil(TTTStopwatch.NextCancel - CurTime())))
                 self:SetColor(TTTStopwatch.Colors.Red)
             end
@@ -248,7 +247,7 @@ hook.Add("TTTBoughtItem", "Stopwatch_Panel", function(is_item, equipment)
         if not self then return end
 
         if (TTTStopwatch.Enabled) then
-    
+
             if (stopwatch_show_seconds()) then
                 self:SetText(TTTStopwatch.RunningTime)
                 if (TTTStopwatch.RunningTime > 7) then
