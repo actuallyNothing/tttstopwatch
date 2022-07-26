@@ -1,11 +1,16 @@
 
 <div align = center>
 
-# ![Icon] Stopwatch
+<br>
+
+![Icon]
+
+# Stopwatch
 
 *A **TTT** addon that adds a stopwatch that teleport* <br>
 *you back to where you were 10 seconds ago.*
 
+<br>
 <br>
 <br>
 
@@ -17,10 +22,9 @@
 
 <br>
 <br>
+<br>
 
 ## Credits
-
-</div>
 
 <br>
 
@@ -50,6 +54,8 @@ The original idea came from **[Tommy228]**'s <br>
 ### Icons
 
 Icons made with works by **[Icons8]**.
+
+</div>
 
 <br>
 
