@@ -16,7 +16,8 @@
 
 [![Button Workshop]][Workshop]
 
-[![Button Install]][Install]   
+[![Button Install]][Install]
+
 [![Button Usage]][Usage]   
 [![Button Config]][Config]
 
@@ -76,5 +77,5 @@ Icons made with works by **[Icons8]**.
 
 [Button Workshop]: https://img.shields.io/badge/Steam_Workshop-000000?style=for-the-badge&logoColor=white&logo=Steam
 [Button Install]: https://img.shields.io/badge/Manual_Installation-EF2D5E?style=for-the-badge&logoColor=white&logo=DocuSign
-[Button Config]: https://img.shields.io/badge/Configuration-428813?style=for-the-badge&logoColor=white&logo=GoogleSearchConsole
+[Button Config]: https://img.shields.io/badge/Config-428813?style=for-the-badge&logoColor=white&logo=GoogleSearchConsole
 [Button Usage]: https://img.shields.io/badge/Usage-0085CA?style=for-the-badge&logoColor=white&logo=GitBook
