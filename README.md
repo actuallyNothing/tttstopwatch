@@ -1,5 +1,7 @@
 
-# ![Stopwatch Icon](https://i.imgur.com/DKpabMV.png) Stopwatch
+<div align = center>
+
+# ![Icon] Stopwatch
 
 *A **TTT** addon that adds a stopwatch that teleport* <br>
 *you back to where you were 10 seconds ago.*
@@ -7,20 +9,20 @@
 <br>
 <br>
 
-<div align = center>
-
 [![Button Workshop]][Workshop]
 
 [![Button Install]][Install]   
 [![Button Usage]][Usage]   
 [![Button Config]][Config]
 
-</div>
-
 <br>
 <br>
 
 ## Credits
+
+</div>
+
+<br>
 
 ### Tester
 
@@ -54,13 +56,14 @@ Icons made with works by **[Icons8]**.
 
 <!----------------------------------------------------------------------------->
 
+[Workshop]: https://steamcommunity.com/sharedfiles/filedetails/?id=2599563790
 [Tommy228]: https://github.com/Tommy228/
 [Icons8]: https://icons8.com/
+[Icon]: https://i.imgur.com/DKpabMV.png
 
 [Install]: Documentation/Installation.md
 [Config]: Documentation/Configuration.md
 [Usage]: Documentation/Usage.md
-[Workshop]: https://steamcommunity.com/sharedfiles/filedetails/?id=2599563790
 
 
 <!---------------------------------[ Buttons ]--------------------------------->
