@@ -4,10 +4,6 @@
 *How to install this addon manually.*
 
 <br>
-
-## 
-
-<br>
 <br>
 
 ## Steps
