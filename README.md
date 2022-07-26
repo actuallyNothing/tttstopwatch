@@ -1,43 +1,71 @@
+
 # ![Stopwatch Icon](https://i.imgur.com/DKpabMV.png) Stopwatch
-A piece of equipment that allows you to mark your position and teleport back to it 10 seconds later.
 
-This is my take on Tommy228's old X-Mark equipment, which is now deleted.
+*A **TTT** addon that adds a stopwatch that teleport* <br>
+*you back to where you were 10 seconds ago.*
 
-## Usage
+<br>
+<br>
 
-After buying it off the Traitor shop, press E + R to activate it. This will start a 10-second timer, that upon ending, will teleport you back to the position you marked.
-During this time, **you receive no fall damage.**
-After 3 seconds have passed since the start of the timer, you can teleport early. By default, this has a 30 second cooldown, after which you can use the ability again.
+<div align = center>
 
-You can't start the ability while crouching or mid-air, and the ability's status is shown through a small GUI for the player.
+[![Button Workshop]][Workshop]
 
-## ConVars
-### Server ConVars
-- **stopwatch_on_fail** (default: 'cancel'): Determines what will happen if a player is blocking a teleport spot. Allowed values are:
-  - **'cancel'**: Will cancel the teleport.
-  - **'kill_blocker'**: Will kill the player that's blocking, and attribute the kill to the Stopwatch user.
-  - **'kill_user'**: Will kill the Stopwatch user, and attribute the kill to the player that's blocking.
-  
-- **stopwatch_cooldown** (default: 30): Determines the cooldown in seconds between Stopwatch uses.
+[![Button Install]][Install]   
+[![Button Usage]][Usage]   
+[![Button Config]][Config]
 
-- **stopwatch_cancel_cooldown** (default: 3): Determines how much time in seconds has to pass before the player can teleport early. Set to a value higher than 10 to effectively disable early teleporting.
+</div>
 
-- **stopwatch_allow_cancelling_midair** (default: 1): Determines whether players can teleport early while in mid-air.
-
-- **stopwatch_nofall** (default: 1): Determines whether the Stopwatch negates fall damage when activated.
-
-### Client ConVars
-- **stopwatch_show_time** (default: 0): Determines whether to show the exact time in seconds before teleporting the player.
-
-## Installing
-
-Alongside the Workshop installation, you can download this repository's code as a ZIP file, and extract it inside your game or server's garrysmod/addons folder.
-Workshop: https://steamcommunity.com/sharedfiles/filedetails/?id=2599563790
+<br>
+<br>
 
 ## Credits
 
-Thanks to **Stig**, **Michy**, **Reino**, **Haru**, **Alejandro**, **Eagle** and **DaniPrrrum** for helping to test this addon.
+### Tester
 
-Original idea by Tommy228: https://github.com/Tommy228/
+*A big thank you to the following* <br>
+*people for testing this addon.*
 
-Icon made with works by Icons8: https://icons8.com/
+<kbd>  Stig  </kbd>   
+<kbd>  Michy  </kbd>   
+<kbd>  Reino  </kbd>   
+<kbd>  Haru  </kbd>
+
+<kbd>  Alejandro  </kbd>   
+<kbd>  Eagle  </kbd>   
+<kbd>  DaniPrrrum  </kbd>
+
+<br>
+
+### Idea
+
+The original idea came from **[Tommy228]**'s <br>
+**X-Mark** addon which is now deleted.
+
+<br>
+
+### Icons
+
+Icons made with works by **[Icons8]**.
+
+<br>
+
+
+<!----------------------------------------------------------------------------->
+
+[Tommy228]: https://github.com/Tommy228/
+[Icons8]: https://icons8.com/
+
+[Install]: Documentation/Installation.md
+[Config]: Documentation/Configuration.md
+[Usage]: Documentation/Usage.md
+[Workshop]: https://steamcommunity.com/sharedfiles/filedetails/?id=2599563790
+
+
+<!---------------------------------[ Buttons ]--------------------------------->
+
+[Button Workshop]: https://img.shields.io/badge/Steam_Workshop-000000?style=for-the-badge&logoColor=white&logo=Steam
+[Button Install]: https://img.shields.io/badge/Manual_Installation-EF2D5E?style=for-the-badge&logoColor=white&logo=DocuSign
+[Button Config]: https://img.shields.io/badge/Configuration-428813?style=for-the-badge&logoColor=white&logo=GoogleSearchConsole
+[Button Usage]: https://img.shields.io/badge/Usage-0085CA?style=for-the-badge&logoColor=white&logo=GitBook
